@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{charset: "utf-8"}
+  %body
+    .side-bar
+      .bar-header
+        .header-items
+          %p.header-items__name mamama
+          %ul.header-items__icon
+            = link_to "#", class: "icon__btn" do
+              = icon('fas', 'edit')
+            = link_to "#", class: "icon__btn" do
+              = icon('fas', 'cog')
+
+      .group-lists
+        .list
+          %p.list__name kato
+          %p.list__message こんにちは
+          %p.list__name kato
+          %p.list__message こんにちは
