@@ -1,40 +1,31 @@
-!!!
-%html
-  %head
-  %body
-    .chat-zone
-      .header
-        .header-left
-          %h2.header-left-group-name はははは
-          %ul.member 
-            #text member : 
-            %li.member-list  田中
-        .header-edit
-          = link_to "Edit","#"
-          <style type="text/css">
-
-          a { text-decoration: none; }
-
-          </style>
-      .messages
-        .message
-          .message__info
-            %p.message__info__talker kato
-            %p.message__info__date 2020.12/12
-          %p.message__text 眠たい
-          .message__info
-            %p.message__info__talker kato
-            %p.message__info__date 2020.12/12
-          %p.message__text 眠たい
-      .form
-        .form__message
-          .form__message__text 
-            .form__message__text__type-text type a message
-            .form__message__text__type-image
-            %label{class: "form__message__text__type-image"}
-              = icon('far', 'image')
-              %input{type: "file", class: "form__message__text__type-image__file"}
+.chat-zone
+  .header
+    .header-left
+      %h2.header-left-group-name はははは
+      %ul.member 
+        #text member : 
+        %li.member__list  田中
+    .header-edit
+      = link_to "Edit","#"
+  .messages
+    .message
+      .message__info
+        %p.message__info__talker kato
+        %p.message__info__date 2020.12/12
+      %p.message__text 眠たい
+      .message__info
+        %p.message__info__talker kato
+        %p.message__info__date 2020.12/12
+      %p.message__text 眠たい
+  .form
+    .form__message
+      .form__message__text 
+        .form__message__text__type-text type a message
+        .form__message__text__type-image
+        %label{class: "form__message__text__type-image"}
+          = icon('far', 'image')
+          %input{type: "file", class: "form__message__text__type-image__file"}
 
 
-          .form__message__icon send
+      .form__message__icon send
 
