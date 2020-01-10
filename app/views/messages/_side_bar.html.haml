@@ -1,11 +1,14 @@
 .side-bar
   .bar-header
     .header-items
-      %p.header-items__name mamama
+      %p.header-items__name
+        = current_user.name
       %ul.header-items__icon
+        %li.list
         = link_to "#", class: "icon__btn" do
           = icon('fas', 'edit')
-        = link_to "#", class: "icon__btn" do
+        %li.list
+        = link_to edit_user_path(current_user), class: "icon__btn" do
           = icon('fas', 'cog')
 
   .group-lists
