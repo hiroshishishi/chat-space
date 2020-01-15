@@ -5,15 +5,17 @@
         = current_user.name
       %ul.header-items__icon
         %li.list
-        = link_to "#", class: "icon__btn" do
+        = link_to new_group_path, class: "icon__btn" do
           = icon('fas', 'edit')
         %li.list
         = link_to edit_user_path(current_user), class: "icon__btn" do
           = icon('fas', 'cog')
 
   .group-lists
-    .list
-      %p.list__name kato
-      %p.list__message こんにちは
-      %p.list__name kato
-      %p.list__message こんにちは
+    - current_user.groups.each do |group|
+      .list
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。

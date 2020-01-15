@@ -6,7 +6,8 @@
         #text member : 
         %li.member__list  田中
     .header-edit
-      = link_to "Edit","#"
+      = link_to "edit","/groups/#{@group}/edit"
+      -# edit_group_path(@group) do
   .messages
     .message
       .message__info
@@ -27,5 +28,4 @@
           %input{type: "file", class: "form__message__text__type-image__file"}
 
 
-      .form__message__icon send
-
+      .form__message__icon
