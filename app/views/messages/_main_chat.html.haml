@@ -1,31 +1,25 @@
 .chat-zone
   .header
     .header-left
-      %h2.header-left-group-name はははは
-      %ul.member 
-        #text member : 
-        %li.member__list  田中
+      .header-left-group-name
+        = @group.name
+      .member 
+        #text member：
+        .member__list
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
     .header-edit
-      = link_to "edit","/groups/#{@group}/edit"
-      -# edit_group_path(@group) do
+      = link_to "Edit",edit_group_path(@group)
+      -# do"/groups/#{@group}/edit"
+      
   .messages
-    .message
-      .message__info
-        %p.message__info__talker kato
-        %p.message__info__date 2020.12/12
-      %p.message__text 眠たい
-      .message__info
-        %p.message__info__talker kato
-        %p.message__info__date 2020.12/12
-      %p.message__text 眠たい
+    = render @messages
+    
   .form
-    .form__message
-      .form__message__text 
-        .form__message__text__type-text type a message
-        .form__message__text__type-image
-        %label{class: "form__message__text__type-image"}
-          = icon('far', 'image')
-          %input{type: "file", class: "form__message__text__type-image__file"}
-
-
-      .form__message__icon
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
