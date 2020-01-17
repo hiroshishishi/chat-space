@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
 
-  def new
-    @user = 
-
   def edit
   end
 
